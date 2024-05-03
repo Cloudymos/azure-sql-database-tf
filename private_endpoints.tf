@@ -41,4 +41,6 @@ data "azurerm_private_dns_a_record" "sqlserver_a_record" {
   name                = var.sqlserver_name
   zone_name           = azurerm_private_dns_zone.dnszone1.name
   resource_group_name = var.resource_group_name
+
+  depends_on = [ azurerm_private_endpoint.pep1 ]
 }
